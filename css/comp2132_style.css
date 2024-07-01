@@ -1,0 +1,516 @@
+/* A0085841
+ * Andrew Kopczynski
+ * 2024-JUN-18
+ */
+
+.center
+{
+    width: 100%;
+    margin:auto;
+}
+
+.centerImages
+{
+    text-align: center;
+}
+
+.right
+{
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+body
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100%;
+    
+    min-width: 500px;
+    padding-bottom: 100px;
+}
+
+footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: "Roboto", sans-serif;
+    
+    margin: 4px 15px;
+    padding: 4px;
+}
+
+p
+{
+    margin: 12px 8px;
+    padding: 4px 16px;
+}
+
+li
+{
+    margin: 2px 8px;
+    padding: 2px;
+}
+
+.photography > img
+{
+    object-fit: contain;
+    
+    margin: 0px;
+    padding: 16px 0px;
+}
+
+.icon
+{
+    height: 8px;
+}
+
+.container
+{
+    display: block;
+
+    width: 95%;
+    max-width: 1000px;
+
+    margin: 32px auto;
+}
+
+.container-thin
+{
+    max-width: 750px;
+}
+
+.section
+{
+    display: block;
+
+    width: 95%;
+    max-width: 1000px;
+
+    margin: 4px auto;
+}
+
+.grid-columns
+{
+    display: grid;
+    grid-template-areas: "main main .";
+    gap: 32px;
+}
+
+.main-section
+{
+    grid-area: main;
+}
+
+.button-section
+{
+    grid-area: button;
+}
+
+.button-section > button
+{
+    font-size: large;
+}
+
+/* COMP 2132 Project - Hangman Game */
+.hangman-letter-grid
+{
+    display: grid;
+    grid-auto-flow: column;
+    
+}
+
+.hangman-letter-grid div
+{
+    font-size: 250%;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.hangman-letter-box
+{
+    margin: auto;
+    text-align: center;
+}
+
+.hangman-letter
+{
+    font-size: 300%;
+    transform: translateY(25%);
+    height: 100px;
+}
+
+.hangman-missing-letter
+{
+    color: red;
+}
+
+.hangman-correct-letter
+{
+    color: greenyellow;
+}
+
+.hangman-error
+{
+    background-color: #fdcece;
+}
+
+.hangman-table
+{
+    border-collapse: collapse;
+}
+
+.hangman-table th, td
+{
+    min-width: 50px;
+}
+
+.hangman-table table, th, td
+{
+    text-align: center;
+    padding: 4px 8px;
+}
+
+.hangman-input-grid-container
+{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 0px;
+
+}
+
+.hangman-input-grid-item
+{
+    text-align: center;
+    height: 40px;
+    width: 100%;
+
+    margin: auto;
+}
+
+.hangman-input-grid-container > input
+{   
+    width: 100px;
+    font-size: 300%;
+}
+
+
+/* Make the first column of the table left-aligned */
+.hangman-table td:first-child
+{
+    text-align: left;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.column 
+{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;    
+
+    min-width: 300px;
+
+    margin:0px;
+    padding:0px;
+}
+
+.errorBox
+{
+    padding: 8px;
+    margin: 8px;
+}
+
+.warningBlock
+{
+    display: inline-block;
+    padding: 0px 8px 2px 4px;
+    margin: 0px 8px 0px 0px;
+}
+
+.paragraph
+{
+    text-indent: 16px;
+}
+
+/* Desktop - Multiple flexible columns on large enough screens */
+@media only screen and (min-width: 800px)
+{
+    .center
+    {
+        width: 80%;
+    }
+
+    .column
+    {
+        flex: 1;
+    }
+
+    .double-column
+    {
+        flex: 2;
+    }
+}
+
+/* Color Setup, for easier color management */
+:root
+{
+    /* Light */
+    --lightMode_bodyBackgroundColor: #CAB1DA;
+
+    --lightMode_headerTextColor: #000;
+    --lightMode_headerBorderColor: #D7D7D7;
+
+    --lightMode_contentBackgroundColor: #FFF;
+
+    --lightMode_textColor: #000;
+
+    --lightMode_borderColor: #D7D7D7;
+
+    --lightMode_errorBackgroundColor: #fdcece;
+    --lightMode_errorBorderColor: #a70b0b;
+
+    --lightMode_highlightedListItemColor: #9ACD32;
+    --lightMode_highlightedListItemBorderColor: #006400;
+
+
+    /* Dark */
+    --darkMode_bodyBackgroundColor: #181818;
+
+    --darkMode_headerTextColor: #CE9178;
+    --darkMode_headerBorderColor: #2B2B2B;
+    
+    --darkMode_contentBackgroundColor: #1F1F1F;
+    
+    --darkMode_textColor: #DDD;
+
+    --darkMode_borderColor: #2B2B2B;
+
+    --darkMode_errorBackgroundColor: #411010;
+    
+    --darkMode_errorBorderColor: #a70b0b;
+    --darkMode_warningBorderColor: #b9b71a;
+
+    --darkMode_highlightedListItemColor: #006400;
+    --darkMode_highlightedListItemBorderColor: #6d7759;
+}
+
+.theme-body
+{
+    background-color: var(--lightMode_bodyBackgroundColor);
+    color: var(--lightMode_textColor);
+}
+
+.theme-footer
+{
+    background-color: var(--lightMode_contentBackgroundColor);
+}
+
+.theme-header
+{
+    border-bottom: 1px solid var(--lightMode_headerBorderColor);
+}
+
+.theme-container
+{
+    background-color: var(--lightMode_contentBackgroundColor);
+
+    border: 0px solid var(--lightMode_borderColor);
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+.theme-section
+{
+    background-color: var(--lightMode_contentBackgroundColor);
+
+    border: 1px solid var(--lightMode_borderColor);
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+.theme-tooltip
+{
+    border: 2px dotted var(--lightMode_textColor);
+}
+
+.theme-tooltip-text
+{
+    background-color: var(--lightMode_contentBackgroundColor);
+    border: 2px solid var(--lightMode_textColor);
+    border-radius: 16px;
+}
+
+.theme-errorBox
+{
+    background-color: var(--lightMode_errorBackgroundColor);
+    
+    border: 2px solid var(--lightMode_errorBorderColor);
+    border-radius: 8px;
+}
+
+.theme-warningBlock
+{
+    font-size: 100%;
+    font-weight: bold;
+
+    background-color: var(--lightMode_contentBackgroundColor);
+    color: var(--lightMode_errorBorderColor);
+
+    border: 2px solid var(--lightMode_errorBorderColor);
+    border-radius: 8px;
+}
+
+.theme-bordered
+{
+    border: 1px solid black;
+}
+
+.theme-table table, th, td
+{
+    border: 1px solid black;
+}
+
+.theme-borderless
+{
+    border-width: 0px !important;
+    border-radius: 0px !important;
+}
+
+.theme-imageBorder
+{
+    border: 2px solid var(--lightMode_borderColor);
+    border-radius: 8px;
+}
+
+div.column
+{
+    background-color: var(--lightMode_contentBackgroundColor);
+    border: 1px solid var(--lightMode_borderColor);
+    border-radius: 0px;
+}
+
+
+/* Dark Mode (detects device settings)*/
+@media (prefers-color-scheme: dark)
+{
+    .theme-body
+    {
+        background-color: var(--darkMode_bodyBackgroundColor);
+        color: var(--darkMode_textColor);
+    }
+
+    .theme-footer
+    {
+        background-color: var(--darkMode_contentBackgroundColor);
+        color: var(--darkMode_textColor);
+    }
+
+    .theme-header
+    {
+        border-bottom: 1px solid var(--darkMode_headerBorderColor);
+    }
+
+    .theme-container
+    {
+        background-color: var(--darkMode_contentBackgroundColor);
+
+        border: 1px solid var(--darkMode_borderColor);
+        border-radius: 0px;
+
+        padding: 0px;
+    }
+
+    .theme-section
+    {
+        background-color: var(--darkMode_contentBackgroundColor);
+
+        border: 1px solid var(--darkMode_borderColor);
+        border-radius: 0px;
+
+        padding: 0px;
+    }
+
+    .theme-tooltip
+    {
+        border: 1px dotted var(--darkMode_warningBorderColor);
+    }
+
+    .theme-tooltip-text
+    {
+        background-color: var(--darkMode_bodyBackgroundColor);
+        
+        border: 1px solid var(--lightMode_borderColor);
+        border-radius: 0px;
+    }
+
+    .theme-errorBox
+    {
+        background-color: var(--darkMode_errorBackgroundColor);
+        
+
+        border: 1px solid var(--darkMode_errorBorderColor);
+        border-radius: 0px;
+    }
+
+    .theme-warningBlock
+    {
+        font-size: 100%;
+        font-weight: bold;
+
+        background-color: var(--darkMode_contentBackgroundColor);
+        color: var(--darkMode_warningBorderColor);
+
+        border: 1px solid var(--darkMode_warningBorderColor);
+        border-radius: 0px;
+    }
+
+    .theme-table table, th, td
+    {
+        border: 1px solid var(--darkMode_highlightedListItemBorderColor);
+    }
+
+    .theme-bordered
+    {
+        border: 1px solid var(--darkMode_highlightedListItemBorderColor);
+    }
+
+    .theme-imageBorder
+    {
+        border: 1px solid var(--darkMode_borderColor);
+        border-radius: 8px;
+    }
+
+    div.column
+    {
+        background-color: var(--darkMode_contentBackgroundColor);
+
+        border: 1px solid var(--darkMode_borderColor);
+    }
+
+    h1, h2, h3, h4, h5, h6
+    {
+        color: var(--darkMode_headerTextColor);
+    }
+
+    /* Default link styling is fine for light mode, but hard to read on dark mode */
+    a:link    { color: lightskyblue; }
+    a:visited { color: #b88fdd; }
+    a:hover   { color: #FFF; }
+    a:active  { color: #ff4040; }
+
+}
