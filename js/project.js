@@ -34,15 +34,22 @@ let wordHintPairs =
 [
     ["abrasive", "sandpaper has this quality"],
     ["automobile", "a famous invention"],
-    ["bewildered", "perplexing or very puzzling"],
+    ["bewildered", "perplexed or very puzzled"],
     ["cluttered", "some closets are like this"],
-    ["treatment", "a kind of protocol"],
+    ["treatment", "a medical regime"],
     ["journal", "an autobiographical helper"],
     ["photograph", "a kind of visual memory"],
-    ["vancouver", "a city"],
+    ["vancouver", "a canadian city"],
     ["spectacular", "visually brilliant"],
-    ["gymnasium", "of greek origin"]
+    ["gymnasium", "a word of greek origin"]
 ];
+
+/* Randomly selecting an array index has the issue of having a (1 / length) chance of selecting
+* the same word twice in a row. Instead, we'll shuffle the list once when the webpage loads and
+* use an index to crawl through it. This means that all words will be chosen at least once.
+*/
+let wordHintPairsIndex = 0;
+shuffleArray(wordHintPairs);
 
 // start first game
 game = newGame(randomWordHintPair());
@@ -64,10 +71,16 @@ $("#hangmanLetterGuess").keypress(function(e)
 
 function randomWordHintPair()
 {
-    let index = Math.floor(Math.random() * wordHintPairs.length);
+    let pair = wordHintPairs[wordHintPairsIndex];
+    wordHintPairsIndex++;
 
-    console.log(index);
-    return wordHintPairs[index];
+    // return to start of list
+    if(wordHintPairsIndex > wordHintPairs.length)
+    {
+        wordHintPairsIndex = 0;
+    }
+
+    return pair;
 }
 
 
