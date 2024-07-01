@@ -1,6 +1,6 @@
 /* A0085841
  * Andrew Kopczynski
- * 2024-MAY-28
+ * 2024-JUL-01
  */
 
 
@@ -119,5 +119,19 @@ function toPercentage(input)
     else
     {
         return `${Math.round(percentage)}%`;
+    }
+}
+
+
+// Shuffle array (via Fisher-Yates / Knuth shuffle)
+function shuffleArray(array)
+{
+    for (let currentIndex = array.length - 1; currentIndex > 0; currentIndex--)
+    {
+        // select a random index
+        let randomIndex = Math.floor(Math.random() * (currentIndex + 1));
+
+        // swap it with the current index
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
 }
